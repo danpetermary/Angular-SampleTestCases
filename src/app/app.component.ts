@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'NewApp';
+  points=0;
+
+  point1()
+  {
+    this.points++;
+  }
+  reset()
+  {
+    this.points=0;
+  }
 }

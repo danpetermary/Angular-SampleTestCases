@@ -8,4 +8,18 @@ export class AppPage {
   getTitleText() {
     return element(by.css('app-root .content span')).getText() as Promise<string>;
   }
+
+  getPoints()
+  {
+    return element(by.cssContainingText('div','Points')).$('span').getText();
+  }
+  getPlusButton()
+  {
+    return element(by.cssContainingText('Button','Plus1'));
+
+  }
+  getResetButton()
+  {
+    return element(by.cssContainingText('Button','Reset'));
+  }
 }

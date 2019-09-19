@@ -8,11 +8,25 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('NewApp app is running!');
-  });
+ 
+  
+  it('Should start with 0',()=>
+  {
+  page.navigateTo();
+  expect(page.getPoints()).toEqual('0');
+  }
+  )
 
+   it('Should increase poin by 1',
+   ()=>
+   {
+     page.navigateTo();
+     expect(page.getPoints()).toEqual('0');
+     page.getPlusButton().click();
+     page.getPlusButton().click();
+     expect(page.getPoints()).toEqual('5');
+   })
+ 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);
